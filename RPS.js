@@ -35,7 +35,7 @@ function playARound(playerSelection, computerSelection) {
 
 function game() {
     for(i = 0; i < 5; i++) {
-        const playerSelection = "rock";
+        const playerSelection = prompt("Rock, Paper, or Scissors?");
         const computerSelection = getComputerChoice();
         console.log(playARound(playerSelection, computerSelection));
     }
