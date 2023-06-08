@@ -40,22 +40,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const rpsContainer = document.querySelector('#container');
 
-    const rockContainer = document.createElement('p');
-    rockContainer.classList.add('rockContainer');
-    rockContainer.textContent = 'Rock';
-    rockContainer.style.color = 'red';
+    const result = document.createElement('h1');
+    result.classList.add('result');
+    rpsContainer.appendChild(result);
 
-    rpsContainer.appendChild(rockContainer);
+    
 
     rock.addEventListener('click', function() {
+        result.textContent = playARound('rock', getComputerChoice());
         console.log(playARound('rock', getComputerChoice()));
     });
 
     paper.addEventListener('click', function() {
+        result.textContent = playARound('paper', getComputerChoice());
         console.log(playARound('paper', getComputerChoice()));
     });
 
     scissors.addEventListener('click', function() {
+        result.textContent = playARound('scissors', getComputerChoice());
         console.log(playARound('scissors', getComputerChoice()));
     });
 });
