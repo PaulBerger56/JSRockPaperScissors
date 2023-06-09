@@ -1,5 +1,6 @@
 let pScore = 0;
 let cScore = 0;
+let gameEnded = false;
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -97,17 +98,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function checkGameEnd() {
         const end = document.querySelector('#endContainer');
         
-        if(pScore === 5) {
+        if(pScore === 5 && !gameEnded) {
             const pWin = document.createElement('h2');
             pWin.classList.add('pWin');
             pWin.textContent = 'Congratulations! You Beat The Computer!'
             end.appendChild(pWin);
+            gameEnded = true;
         }
-        if(cScore === 5) {
+        if(cScore === 5 && !gameEnded) {
             const cWin = document.createElement('h2');
             cWin.classList.add('cWin');
             cWin.textContent = 'Sorry! You Lost To The Computer!'
             end.appendChild(cWin);
+            gameEnded = true;
         }
     }
     
